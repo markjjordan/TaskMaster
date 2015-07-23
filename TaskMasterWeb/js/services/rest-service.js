@@ -1,13 +1,6 @@
-﻿app.service("restService", function () {
+﻿app.service("restService", ['$http', function ($http) {
 
-    var currentRelativeUrl;
-    try {
-        currentRelativeUrl = _spPageContextInfo.webServerRelativeUrl;
-    } catch (k) {
-        currentRelativeUrl = "";
-    }
-    
-    var rootUrl = window.location.protocol + "//" + window.location.host + currentRelativeUrl + "/_vti_bin/cdh.whi.clientdashboard/WcfService.svc/";
+    var rootUrl = 'http://localhost:58753/api/';
 
     this.get = function (method, callback) {
 
@@ -16,11 +9,17 @@
         $.ajax({
             url: url,
             cache: false,
+            dataType: 'json',
+            beforeSend: setHeader,
         }).done(function (data) {
             if (callback) { callback(data) };
         }).fail(function( jqXHR, textStatus, errorThrown ) {
-            alertModal(url, "An error has occurred");
         });
+    }
+
+    function setHeader(xhr) {
+
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     }
 
     this.post = function (method, data, callback) {
@@ -36,7 +35,6 @@
                 if (callback) {
                     callback(data); };
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                alertModal(jqXHR.responseText, "An error has occurred");
             });
         } else {
             $.ajax({
@@ -49,11 +47,10 @@
                 if (callback) {
                     callback(data); };
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                alertModal(jqXHR.responseText, "An error has occurred");
             });
         }
         
     }
 
 
-});
+}]);
