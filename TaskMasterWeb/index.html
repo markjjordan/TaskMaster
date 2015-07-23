@@ -27,8 +27,8 @@
         
         <div ng-repeat="task in tasks">
             
-            <h1>{{task.Description}}</h1>
-            <div style="width:500px; height:200px; border:solid 1px black;"></div>
+            <h1 ng-click="$parent.openedTask = task ">{{task.Name}}</h1>
+            <div style="width:500px; height:200px; background-color:white; border:solid 1px black;" ng-show="task.Id == openedTask.Id"></div>
         
         </div>
 

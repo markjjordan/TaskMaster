@@ -4,16 +4,16 @@
     this.getTasks = function () {
         var deferred = $q.defer();
 
-        restService.get('values/1', function (data) {
-
-            data = [
+        setTimeout(function() {
+            deferred.resolve(data = [
                 { Id: 1, Name: 'Kyle' },
                 { Id: 2, Name: 'Ben' }
-            ];
+            ]);
 
+        });
 
-
-            deferred.resolve(data);
+        restService.get('tasks', function (data) {
+            //deferred.resolve(data);
         });
 
         return deferred.promise;

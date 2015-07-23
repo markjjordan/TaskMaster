@@ -17,7 +17,7 @@ app.controller("TaskCtrl", ['$scope', '$q', 'taskService', function ($scope, $q,
     };
 
     $scope.editTask = function () {
-        $scope.openedTask = this.task;
+        $scope.openedTask = angular.copy(this.task);
     };
 
     $scope.saveTask = function() {

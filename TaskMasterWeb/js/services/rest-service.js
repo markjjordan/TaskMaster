@@ -6,20 +6,24 @@
 
         var url = rootUrl + method;
 
-        $.ajax({
-            url: url,
-            cache: false,
-            dataType: 'json',
-            beforeSend: setHeader,
-        }).done(function (data) {
+        $http({
+            url : url,
+            //cache: false,
+            //dataType: 'json',
+            //contentType: 'application/json',
+            //headers: {
+            //    'Content-Type': 'application/json'
+            //},
+        }).success(function (data) {
+            alert("HI");
             if (callback) { callback(data) };
-        }).fail(function( jqXHR, textStatus, errorThrown ) {
+        }).error(function( jqXHR, textStatus, errorThrown ) {
         });
     }
 
     function setHeader(xhr) {
 
-        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhr.setResponseHeader('Access-Control-Allow-Origin', '*');
     }
 
     this.post = function (method, data, callback) {
