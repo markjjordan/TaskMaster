@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DropNet;
-using DropNet.Models;
+﻿using DropNet;
 
 namespace TaskMasterApi.Services
 {
 
-    public class DropboxDataService
+    public class DropboxDataService : IDataService
     {
         private readonly IDropNetClient _dropNetClient;
 

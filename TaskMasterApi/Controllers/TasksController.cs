@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web;
 using System.Web.Http;
-using System.Web.Providers.Entities;
 using TaskMasterApi.Models;
 using TaskMasterApi.Services;
 
@@ -13,7 +8,7 @@ namespace TaskMasterApi.Controllers
 {
     public class TasksController : ApiController
     {
-        private readonly DropboxDataService _dropboxDataService;
+        private readonly IDataService _dropboxDataService;
         private readonly ParsingService _parsingService;
 
         public TasksController()
