@@ -1,9 +1,35 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    Hello, World!
-</body>
+<html ng-app="app" ng-controller="appCtrl" ng-init="init()" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+        <title></title>
+
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <!--Core-->
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>   
+
+        <!--Controllers-->
+        <script src="js/controllers/app-controller.js"></script>
+
+        <!--Misc Directives-->
+        <script src="js/filters/sort-by-property.js"></script>
+        <script src="js/filters/tasks-filter.js"></script>
+
+        <!--Services-->
+        <script src="js/services/rest-service.js"></script>
+        <script src="js/services/task-service.js"></script>
+
+    </head>
+    <body>
+        
+        Hello, World!
+
+        <div ng-repeat="task in tasks">
+            <h1>{{task.Description}}</h1>
+        </div>
+    
+
+    </body>
 </html>
