@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using TaskMasterApi.Models;
 using TaskMasterApi.Services;
 
 namespace TaskMasterApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TasksController : ApiController
     {
         private readonly IDataService _dropboxDataService;
@@ -13,7 +15,7 @@ namespace TaskMasterApi.Controllers
 
         public TasksController()
         {
-            _dropboxDataService = new DropboxDataService("2ye0qkgiebbbmc8", 
+            _dropboxDataService = new DropboxDataService("2ye0qkgiebbbmc8",
                                                          "knyd9c9wdcrnm6v",
                                                          "C7A5Ol0rTmAAAAAAAAAAB7zOq76TMXIKLMsaVivYagaza8XMU__RqGw3D2syR3SK");
             _parsingService = new ParsingService();
