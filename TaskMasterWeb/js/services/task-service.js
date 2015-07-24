@@ -7,15 +7,15 @@
         setTimeout(function() {
 
             var data = [
-                {Project: 'Proj A', Description: 'Desc A'},
+                {Project: 'Proj A', Description: 'Remember to talk with Roger about travel to Tokyo.'}/*,
                 {Project: 'Proj B', Description: 'Desc B'},
-                {Project: 'Proj C', Description: 'Desc C'}
+                {Project: 'Proj C', Description: 'Desc C'}*/
             ];
 
             deferred.resolve(data);
 
 
-        }, 5000);
+        }, 50);
 
         return deferred.promise;
     };

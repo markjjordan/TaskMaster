@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Text;
 using DropNet;
-using DropNet.Models;
 
 namespace TaskMasterApi.Services
 {
-
-    public class DropboxDataService
+    /// <summary>
+    /// Class for accessing files on Dropbox
+    /// </summary>
+    public class DropboxDataService : IDataService
     {
         private readonly IDropNetClient _dropNetClient;
 
@@ -20,11 +18,25 @@ namespace TaskMasterApi.Services
             };
         }
 
+        /// <summary>
+        /// Get the master list file from Dropbox 
+        /// </summary>
+        /// <returns>The file as a string</returns>
         public string GetMasterListText()
         {
             var file = _dropNetClient.GetFile("/master-list.txt");
-            return System.Text.Encoding.Default.GetString(file);
+            return Encoding.Default.GetString(file);
         }
 
+        /// <summary>
+        /// Write the master list file to Dropbox
+        /// </summary>
+        /// <param name="masterListText">The master list as a string</param>
+        public void UpdateMasterListFile(string masterListText)
+        {
+            var masterListBytes = Encoding.Default.GetBytes(masterListText);
+
+            _dropNetClient.UploadFile("/", "master-list.txt", masterListBytes);
+        }
     }
 }
