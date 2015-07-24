@@ -65,6 +65,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
+    <Content Include="js\tools.js" />
     <Content Include="js\app.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\controllers\task-controller.js" />
