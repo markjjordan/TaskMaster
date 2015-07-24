@@ -1,25 +1,16 @@
-﻿app.service("restService", function () {
+﻿app.service("restService", ['$http', function ($http) {
 
-    var currentRelativeUrl;
-    try {
-        currentRelativeUrl = _spPageContextInfo.webServerRelativeUrl;
-    } catch (k) {
-        currentRelativeUrl = "";
-    }
-    
-    var rootUrl = window.location.protocol + "//" + window.location.host + currentRelativeUrl + "/_vti_bin/cdh.whi.clientdashboard/WcfService.svc/";
+    var rootUrl = 'http://localhost:58753/api/';
 
     this.get = function (method, callback) {
 
         var url = rootUrl + method;
 
-        $.ajax({
-            url: url,
-            cache: false,
-        }).done(function (data) {
+        $http({
+            url : url,
+        }).success(function (data) {
             if (callback) { callback(data) };
-        }).fail(function( jqXHR, textStatus, errorThrown ) {
-            alertModal(url, "An error has occurred");
+        }).error(function( jqXHR, textStatus, errorThrown ) {
         });
     }
 
@@ -28,32 +19,28 @@
         var url = rootUrl + method;
 
         if (typeof data == "undefined" || data == null) {
-            $.ajax({
+            $http({
                 url: url,
                 method: "POST",
                 data: data,
-            }).done(function (data) {
+            }).success(function (data) {
                 if (callback) {
                     callback(data); };
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                alertModal(jqXHR.responseText, "An error has occurred");
+            }).error(function (jqXHR, textStatus, errorThrown) {
             });
         } else {
-            $.ajax({
+            $http({
                 url: url,
                 method: "POST",
-                contentType: "application/json",
-                dataType: "json",
                 data: data,
-            }).done(function (data) {
+            }).success(function (data) {
                 if (callback) {
                     callback(data); };
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                alertModal(jqXHR.responseText, "An error has occurred");
+            }).error(function (jqXHR, textStatus, errorThrown) {
             });
         }
         
     }
 
 
-});
+}]);
