@@ -21,7 +21,6 @@
 
         <!--Misc Directives-->
         <script src="js/tools.js"></script>
-        <script src="js/filters/sort-by-property.js"></script>
         <script src="js/filters/tasks-filter.js"></script>
         <script src="js/filters/formatters.js"></script>
 
@@ -45,10 +44,12 @@
 
 
         <div id="content-main">
+            
+            <input type="text" ng-model="taskFilterText" />
 
             <div class="panel panel-primary">
                 
-                <div class="panel-heading" ng-repeat="task in tasks">
+                <div class="panel-heading" ng-repeat="task in tasks | tasksFilter : taskFilterText">
                     <div class="context-panel">
 
                     </div>

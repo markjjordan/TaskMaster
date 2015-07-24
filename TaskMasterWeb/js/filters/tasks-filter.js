@@ -1,4 +1,2 @@
-app.filter('tasksFilter', function () {
-    return tasksFilter;
-});
+app.filter('tasksFilter', function () { return tasksFilter; });
 

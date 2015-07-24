@@ -11,7 +11,7 @@ function tasksFilter(tasks, searchText) {
     return tasks.filter(function (task) {
 
         if (searchText) {
-            if (task.Title.toLowerCase().indexOf(searchText.toLowerCase()) == -1) return false;
+            if (task.Description.toLowerCase().indexOf(searchText.toLowerCase()) == -1) return false;
         }
 
         return true;
