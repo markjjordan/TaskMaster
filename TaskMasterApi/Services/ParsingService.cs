@@ -13,7 +13,7 @@ namespace TaskMasterApi.Services
         public List<Task> GetTaskArray(string taskListText)
         {
             var returnValue = new List<Task>();
-            var lines = taskListText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = taskListText.Split(new string[] { "\\r\\n" }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < lines.Count(); i++)
             {
                 var line = lines[i];
@@ -91,12 +91,9 @@ namespace TaskMasterApi.Services
             string pattern = @"^x\s+";
             if (Regex.IsMatch(task, pattern))
             {
-                //Regex r = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-                //returnValue = r.Match(task).Result("${qualifierValue}");
-                returnValue = true;
-            }
-            return returnValue;
+                return new Task[] {new Task {Description = "Task 1"}, new Task {Description = "Task 2"}};
         }
 
     }
+}
 }

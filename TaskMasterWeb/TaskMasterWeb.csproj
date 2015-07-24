@@ -65,12 +65,12 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
+    <Content Include="js\tools.js" />
     <Content Include="js\app.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\controllers\task-controller.js" />
     <Content Include="js\filters\formatters.js" />
     <Content Include="js\filters\tasks-filter.js" />
-    <Content Include="js\filters\sort-by-property.js" />
     <Content Include="js\jquery-2.1.3.min.js" />
     <Content Include="js\services\task-service.js" />
     <Content Include="js\services\rest-service.js" />
