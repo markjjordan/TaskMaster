@@ -23,7 +23,7 @@ namespace TaskMasterApi.Tests.Services
             var parsingService = new ParsingService();
 
             // Act / When
-            var tasks = @"!a build story map for +gitting-stuff-done\r\n!c transfer google books to kindle\r\npick up prescription at costcos due:2015-07-30";
+            var tasks = @"!a build story map for +gitting-stuff-done" + Environment.NewLine + "!c transfer google books to kindle" + Environment.NewLine + "pick up prescription at costcos due:2015-07-30";
             var tasksArray = parsingService.GetTaskArray(tasks);
 
             // Assert / Then
