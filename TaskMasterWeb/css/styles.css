@@ -1,2 +1,82 @@
-﻿body {
+﻿
+/*
+    light blue: rgb(184, 236, 215);
+    dark blue: rgb(8, 54, 67);
+    green: rgb(177, 224, 1);
+    light green: rgb(206, 240, 157);
+    grayish blue: rgb(71, 108, 94);
+    */
+body {
+    background-color: white;
+    padding:0;
+}
+
+#masthead {
+height:100px;
+padding:25px;
+background-color: rgb(8, 54, 67);
+margin-bottom:50px;
+}
+
+#masthead > h1 {
+    color:#FFF;
+}
+#content-main {
+    padding:0 25px;
+
+}
+.task-icon {
+display:inline-block;
+}
+
+.panel-heading p {
+display:inline-block;
+vertical-align:middle;
+padding:0 15px;
+margin:auto;
+
+}
+
+.panel-reveal {
+
+}
+
+.header {
+    font-size:64px;
+}
+
+.task-complete {
+    color:rgb(177, 224, 1) !important;
+    
+}
+
+.task-incomplete {
+    color:rgb(224, 46, 22) !important;
+}
+
+.icon-panel {
+border-right:solid 2px rgb(184, 236, 215);
+display:inline-block;
+padding:0 15px;
+vertical-align:middle;
+
+}
+
+    .icon-panel i {
+    font-size:28px !important;
+    margin:5px;
+    vertical-align:middle;
+    color:rgb(184, 236, 215);
+    }
+
+.panel-primary > .panel-heading {
+background-color:rgb(8, 54, 67) !important;
+}
+
+.due-date {
+
+}
+
+.context-panel {
+
 }

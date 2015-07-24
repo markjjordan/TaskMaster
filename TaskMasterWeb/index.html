@@ -1,12 +1,20 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Task Manager</title>
+        
+        <title></title>
 
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+
+
+        <!-- Latest compiled and minified JavaScript -->
         
         <!--Core-->
         <script src="js/angular.min.js"></script>
+        <script src="js/ui-bootstrap-tpls-0.13.0.min.js"></script>
         <script src="js/app.js"></script>   
 
         <!--Controllers-->
@@ -21,15 +29,48 @@
         <script src="js/services/rest-service.js"></script>
         <script src="js/services/task-service.js"></script>
 
+
+
+
+
+        
+
     </head>
     <body ng-controller="TaskCtrl" ng-init="init()">
         
-        <div ng-repeat="task in tasks">
-            
-            <h1 ng-click="$parent.openedTask = task">{{task.Description}}</h1>
-            <div style="width:500px; height:200px; background-color:white; border:solid 1px black;" ng-show="task.Id == $parent.openedTask.Id"></div>
-            <h3>{{task.DueDate | formatIsoDate}}</h3>
+        <div id="masthead">
+            <h1>Task Master</h1>
         </div>
+
+
+
+        <div id="content-main">
+
+            <div class="panel panel-primary">
+                
+                <div class="panel-heading" ng-repeat="task in tasks">
+                    <div class="context-panel">
+
+                    </div>
+                    <div class="icon-panel">
+                        <i class="fa" ng-class="{ 'fa-check-circle task-complete' : task.IsCompleted, 'fa-circle-o task-incomplete' : !task.IsCompleted }"></i>
+                        <i class="fa panel-reveal"></i>
+                    </div>
+                    <div>
+                        <p class="due-date">Due: {{task.DueDate | formatIsoDate}}</p>
+                        <p class="panel-title">{{task.Description}}</p>
+                    </div>
+                    
+                </div>
+                <div class="panel-body" style="display:none;">
+                </div>
+            </div>
+
+          
+
+        </div>
+
+        
 
     </body>
 </html>

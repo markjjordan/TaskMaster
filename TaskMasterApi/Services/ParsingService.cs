@@ -11,7 +11,7 @@ namespace TaskMasterApi.Services
     {
         public Task[] GetTaskArray(string taskListText)
         {
-            return new Task[] { new Task { Description = "Task 1" }, new Task { Description = "Task 2" } };
+            return new Task[] { new Task { Description = "Task 1 complete", IsCompleted = true }, new Task { Description = "Task 2 incomplete", IsCompleted = false } };
         }
     }
 }

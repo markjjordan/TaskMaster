@@ -57,10 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\app.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\controllers\task-controller.js" />
     <Content Include="js\filters\formatters.js" />
     <Content Include="js\filters\tasks-filter.js" />
@@ -80,6 +83,7 @@
     <Content Include="js\tests\vendor\mocha.js" />
     <Content Include="js\tests\vendor\ramda.js" />
     <Content Include="js\tests\vendor\sinon.js" />
+    <Content Include="js\ui-bootstrap-tpls-0.13.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
