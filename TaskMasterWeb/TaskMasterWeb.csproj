@@ -57,9 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="css\styles.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\app.js" />
@@ -91,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\angular.min.js.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

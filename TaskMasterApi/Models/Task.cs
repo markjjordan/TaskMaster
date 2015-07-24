@@ -7,6 +7,7 @@ namespace TaskMasterApi.Models
 {
     public class Task
     {
+        public int Id { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
         public string Context { get; set; }
