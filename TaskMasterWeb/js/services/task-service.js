@@ -1,23 +1,26 @@
-﻿app.service("taskService", ['$q', function ($q) {
+﻿app.service("taskService", ['$q', 'restService', function ($q, restService) {
 
 
     this.getTasks = function () {
         var deferred = $q.defer();
 
-        setTimeout(function() {
-
-            var data = [
-                {Project: 'Proj A', Description: 'Remember to talk with Roger about travel to Tokyo.'}/*,
-                {Project: 'Proj B', Description: 'Desc B'},
-                {Project: 'Proj C', Description: 'Desc C'}*/
-            ];
-
+        restService.get('tasks', function (data) {
             deferred.resolve(data);
-
-
-        }, 50);
+        });
 
         return deferred.promise;
     };
+
+    this.updateTask = function(task) {
+        var deferred = $q.defer();
+
+        restService.post('task', task, function (data) {
+
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+
 
 }]);
