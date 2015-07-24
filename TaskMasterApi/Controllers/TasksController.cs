@@ -30,7 +30,7 @@ namespace TaskMasterApi.Controllers
                 HttpContext.Current.Session["TaskList"] = _parsingService.GetTaskArray(textFile);
             }
 
-            return (Task[])HttpContext.Current.Session["TaskList"];
+            return (List<Task>)HttpContext.Current.Session["TaskList"];
         }
 
         // GET api/tasks/5

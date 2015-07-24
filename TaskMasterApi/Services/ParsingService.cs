@@ -13,7 +13,7 @@ namespace TaskMasterApi.Services
         public List<Task> GetTaskArray(string taskListText)
         {
             var returnValue = new List<Task>();
-            var lines = taskListText.Split(new string[] { "\\r\\n" }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = taskListText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < lines.Count(); i++)
             {
                 var line = lines[i];
