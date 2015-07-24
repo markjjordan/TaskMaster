@@ -9,7 +9,7 @@ namespace TaskMasterApi.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
         public string Context { get; set; }
         public string Project { get; set; }
         public bool IsCompleted { get; set; }

@@ -29,9 +29,17 @@ namespace TaskMasterApi.Services
             returnValue.Id = id;
             returnValue.Description = taskString;
             returnValue.Context = GetContextQualifier(taskString);
-            DateTime dateTime = new DateTime();
-            DateTime.TryParse(GetDueDateQualifier(taskString), out dateTime);
-            returnValue.DueDate = dateTime;
+            DateTime dateTime;
+
+            if (DateTime.TryParse(GetDueDateQualifier(taskString), out dateTime))
+            {
+                returnValue.DueDate = dateTime;
+            }
+            else
+            {
+                returnValue.DueDate = null;
+            }
+
             returnValue.Project = GetProjectQualifier(taskString);
             return returnValue;
         }
