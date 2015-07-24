@@ -57,8 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
